@@ -3,7 +3,7 @@
 #------------Remote State S3 Bucket-----------------
 
 # Creating S3 Bucket for Terraform
-resource "aws_s3_bucket" "rs_task_bucket9194" {
+resource "aws_s3_bucket" "tf_state_bucket9194" {
   bucket = "tfstate-bucket919450"
   tags = {
     Name = "new-S3Bucket"
@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "rs_task_bucket9194" {
 # Attaching versioning to the Bucket
 
 resource "aws_s3_bucket_versioning" "Bucket_Versioning" {
-  bucket = aws_s3_bucket.rs_task_bucket9194.id
+  bucket = aws_s3_bucket.tf_state_bucket9194.id
   versioning_configuration {
     status = "Enabled"
   }
